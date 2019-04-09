@@ -37,7 +37,6 @@ namespace PageObjectsTest.menutests
         [Test]
         public void AboutMenuTest()
         {
-            //Thread.Sleep(3000);
             Assert.True(page.ClickElement(By.XPath("//*[@id='services']/div/div/div/h2")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='services']/div/div/div/h2")));
         }
@@ -45,7 +44,6 @@ namespace PageObjectsTest.menutests
         [Test]
         public void HistoryMenuTest()
         {
-            //Thread.Sleep(3000);
             Assert.True(page.ClickElement(By.XPath("//*[@id='about']/div/div[1]/div/h2")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='about']/div/div[1]/div/h2")));
         }
@@ -53,7 +51,6 @@ namespace PageObjectsTest.menutests
         [Test]
         public void BackgroundMenuTest()
         {
-            //Thread.Sleep(3000);
             Assert.True(page.ClickElement(By.XPath("//*[@id='background']/div/div[1]/div/h2")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='background']/div/div[1]/div/h2")));
         }
@@ -61,7 +58,6 @@ namespace PageObjectsTest.menutests
         [Test]
         public void ProductMenuTest()
         {
-            //Thread.Sleep(3000);
             Assert.True(page.ClickElement(By.XPath("//*[@id='product']/div/div[1]/div/h2")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='product']/div/div[1]/div/h2")));
         }
@@ -69,11 +65,24 @@ namespace PageObjectsTest.menutests
         [Test]
         public void TeamMenuTest()
         {
-            //Thread.Sleep(3000);
             Assert.True(page.ClickElement(By.XPath("//*[@id='navbarResponsive']/ul/li[5]/a")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='navbarResponsive']/ul/li[5]/a")));
         }
 
+        [Test]
+        public void PartnersMenuTest()
+        {
+            Assert.True(page.ClickElement(By.XPath("//*[@id='navbarResponsive']/ul/li[6]/a")));
+            Assert.True(page.IsElementVisible(By.XPath("//*[@id='navbarResponsive']/ul/li[6]/a")));
+        }
+
+        [Test]
+        public void ContactsMenuTest()
+        {
+            Assert.True(page.ClickElement(By.XPath("//*[@id='navbarResponsive']/ul/li[7]/a")));
+            Assert.True(page.IsElementVisible(By.XPath("//*[@id='navbarResponsive']/ul/li[7]/a")));
+            page.Quit();
+        }
 
     }
 }
