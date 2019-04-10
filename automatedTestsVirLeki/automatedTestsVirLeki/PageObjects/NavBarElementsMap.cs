@@ -22,5 +22,13 @@ namespace autoTestsVirleki.PageObjects
                 return this.webDriver.FindElement(By.XPath("//a[@class='navbar-brand js-scroll-trigger text-uppercase']"));
             }
         }
+
+        public IWebElement PartnersButton
+        {
+            get
+            {
+                return this.webDriver.FindElement(By.XPath("//a[contains(text(),'Partners')]"));
+            }
+        }
     }
 }

@@ -60,8 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\Head.cs" />
+    <Compile Include="PageObjects\HeadElementsMap.cs" />
+    <Compile Include="PageObjects\Helper.cs" />
     <Compile Include="PageObjects\NavBar.cs" />
     <Compile Include="PageObjects\NavBarElementsMap.cs" />
+    <Compile Include="PageObjects\PartnersSectioncs.cs" />
+    <Compile Include="PageObjects\PartnersSectionMap.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
