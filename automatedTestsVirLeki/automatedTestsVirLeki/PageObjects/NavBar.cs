@@ -9,7 +9,7 @@ namespace autoTestsVirleki.PageObjects
     class NavBar
     {
         private readonly IWebDriver webDriver;
-        private readonly string url = @"https://veramaryenko.github.io/bootstrap/";
+        
 
         public NavBar(IWebDriver webDriver)
         {
@@ -27,6 +27,11 @@ namespace autoTestsVirleki.PageObjects
         public void LogoButtonClick()
         {
             this.Map.LogoButton.Click();
+        }
+
+        public void PartnersButtonClick()
+        {
+            this.Map.PartnersButton.Click();
         }
     }
 }
