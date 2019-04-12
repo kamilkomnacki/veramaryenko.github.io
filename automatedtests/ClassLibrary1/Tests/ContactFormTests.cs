@@ -60,7 +60,7 @@ namespace PageObjectsTest.Tests
         }
 
         [Test]
-        public void ScrollToContacts_SubmitIncorrectEmail_CheckVAlidation()
+        public void ScrollToContacts_SubmitIncorrectEmailNoOtherData_CheckVAlidation()
         {
             Assert.True(page.ClickElement(By.XPath("//*[@id='navbarResponsive']/ul/li[7]/a")));
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='navbarResponsive']/ul/li[7]/a")));

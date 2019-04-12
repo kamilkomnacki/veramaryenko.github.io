@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -12,7 +13,7 @@ namespace PageObjectsTest.Pages
         private static string title = "VirLeki Innovative VR Gaming Platform for Patients Rehabilitation";
         private IWebDriver Driver { get; set; }
 
-        [FindsBy(How=How.Id,Using = "name")]
+        [FindsBy(How = How.Id, Using = "name")]
         public IWebElement NameField { get; set; }
 
         [FindsBy(How = How.Id, Using = "email")]
@@ -28,7 +29,7 @@ namespace PageObjectsTest.Pages
         public IWebElement SendMsgBtn { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//*[@id='contactForm']/div/div[1]/div[1]/p/ul/li")]
-        public IWebElement NameErrMsg { get;  }
+        public IWebElement NameErrMsg { get; }
 
         [FindsBy(How = How.XPath, Using = "//*[@id='success']/div/strong")]
         public IWebElement SuccessMsg { get; }
@@ -142,6 +143,26 @@ namespace PageObjectsTest.Pages
             SendMsgBtn.Submit();
             return new VirlekiPage(Driver);
         }
+
+        public bool IsValidString(string s)
+        {
+            bool isValid = Regex.IsMatch(s, "@\"^[a-zA-Z0-9\\_]{2,40}$\"", RegexOptions.IgnoreCase);
+            return isValid;
+        }
+
+        public bool IsValidMessage(string s)
+        {
+            bool isValid = 
+                Regex.IsMatch(s, "@\"^*[^'=-]+$\"", RegexOptions.IgnoreCase);
+            return isValid;
+        }
+
+        public bool IsValidPhoneNumber(string s) {
+
+            bool isValid = Regex.IsMatch(s, "@\"^[0-9\\-\\+\\_]{7,20}$\"", RegexOptions.IgnoreCase);
+            return isValid;
+        }
+
 
     }
 }
