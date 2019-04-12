@@ -9,8 +9,9 @@ namespace PageObjectsTest.Pages
 {
     public class VirlekiPage
     {
-        static string url = @"https://veramaryenko.github.io/bootstrap/";
+        public static string Url = "http://localhost/zmwpi/"; //@"https://veramaryenko.github.io/bootstrap/"; "http://localhost/zmwpi/"
         private static string title = "VirLeki Innovative VR Gaming Platform for Patients Rehabilitation";
+
         private IWebDriver Driver { get; set; }
 
         [FindsBy(How = How.Id, Using = "name")]
@@ -34,6 +35,8 @@ namespace PageObjectsTest.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='success']/div/strong")]
         public IWebElement SuccessMsg { get; }
 
+
+
         public VirlekiPage(IWebDriver dr)
         {
             this.Driver = dr;
@@ -48,7 +51,7 @@ namespace PageObjectsTest.Pages
 
         public void Load()
         {
-            Driver.Navigate().GoToUrl(url);
+            Driver.Navigate().GoToUrl(Url);
         }
 
         public void Close()

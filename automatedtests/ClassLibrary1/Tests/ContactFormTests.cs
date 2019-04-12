@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using PageObjectsTest.Pages;
+using System;
 
 namespace PageObjectsTest.Tests
 {
@@ -39,7 +40,10 @@ namespace PageObjectsTest.Tests
             Assert.True(page.IsElementVisible(By.XPath("//*[@id='navbarResponsive']/ul/li[7]/a")));
             page.SubmitDataToContactForm("User Test", "tester@gmail.com", "689345092", "Test Message");
             Assert.IsTrue(page.IsElementVisible(By.XPath("//*[@id='success']/div/strong")));
-            //Assert.AreEqual(page.SuccessMsg.Text, "Your message has been sent.");
+            string username = driver.FindElement(By.XPath("//*[@id='success']/div/strong")).Text.Substring(0, driver.FindElement(By.XPath("//*[@id='success']/div/strong")).Text.IndexOf(" "));
+            string errmsg = "Sorry " + username + ", it seems that my mail server is not responding. Please try again later!";
+            Assert.AreEqual(driver.FindElement(By.XPath("//*[@id='success']/div/strong")).Text, @"Your message has been sent.");
+
         }
 
         [Test]
