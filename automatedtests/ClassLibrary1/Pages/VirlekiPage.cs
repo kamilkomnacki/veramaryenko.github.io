@@ -9,7 +9,7 @@ namespace PageObjectsTest.Pages
 {
     public class VirlekiPage
     {
-        static string url = "http://localhost/zmwpi/";
+        static string url = @"https://veramaryenko.github.io/bootstrap/";
         private static string title = "VirLeki Innovative VR Gaming Platform for Patients Rehabilitation";
         private IWebDriver Driver { get; set; }
 
