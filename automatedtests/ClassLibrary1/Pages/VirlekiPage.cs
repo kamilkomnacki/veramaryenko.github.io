@@ -144,22 +144,16 @@ namespace PageObjectsTest.Pages
             return new VirlekiPage(Driver);
         }
 
-        public bool IsValidString(string s)
+        public bool IsValidName(string s)
         {
-            bool isValid = Regex.IsMatch(s, "@\"^[a-zA-Z0-9\\_]{2,40}$\"", RegexOptions.IgnoreCase);
+            bool isValid = Regex.IsMatch(s, @"^[a-zA-Z0-9\\_]{2,40}$", RegexOptions.IgnoreCase);
             return isValid;
         }
 
-        public bool IsValidMessage(string s)
-        {
-            bool isValid = 
-                Regex.IsMatch(s, "@\"^*[^'=-]+$\"", RegexOptions.IgnoreCase);
-            return isValid;
-        }
 
         public bool IsValidPhoneNumber(string s) {
 
-            bool isValid = Regex.IsMatch(s, "@\"^[0-9\\-\\+\\_]{7,20}$\"", RegexOptions.IgnoreCase);
+            bool isValid = Regex.IsMatch(s, @"^[0-9\-\+\_]{7,20}$", RegexOptions.IgnoreCase);
             return isValid;
         }
 
