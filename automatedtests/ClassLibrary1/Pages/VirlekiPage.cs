@@ -146,7 +146,7 @@ namespace PageObjectsTest.Pages
 
         public bool IsValidName(string s)
         {
-            bool isValid = Regex.IsMatch(s, @"^[a-zA-Z0-9\\_]{2,40}$", RegexOptions.IgnoreCase);
+            bool isValid = Regex.IsMatch(s, @"^[a-zA-Z0-9\_]{2,40}$", RegexOptions.IgnoreCase);
             return isValid;
         }
 
@@ -154,6 +154,12 @@ namespace PageObjectsTest.Pages
         public bool IsValidPhoneNumber(string s) {
 
             bool isValid = Regex.IsMatch(s, @"^[0-9\-\+\_]{7,20}$", RegexOptions.IgnoreCase);
+            return isValid;
+        }
+
+        public bool IsValidEmail(string s)
+        {
+            bool isValid = Regex.IsMatch(s, @"^[a-z][a-z0-9_]*@[a-z0-9]*\.[a-z]{2,3}$", RegexOptions.IgnoreCase);
             return isValid;
         }
 
